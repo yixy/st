@@ -2,7 +2,8 @@
 
 git clone https://git.suckless.org/st
 
-
+$ patch < patches/st-scrollback-20210507-4536f46.diff
+$ patch < patches/st-copyurl-multiline-20220221-0.8.5.diff
 
 ## README
 
