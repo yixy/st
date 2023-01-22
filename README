@@ -1,7 +1,14 @@
+## my st
+
+git clone https://git.suckless.org/st
+
+
+
+## README
+
 st - simple terminal
 --------------------
 st is a simple terminal emulator for X which sucks less.
-
 
 Requirements
 ------------
