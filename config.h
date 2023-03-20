@@ -183,6 +183,12 @@ static MouseShortcut mshortcuts[] = {
 	{ XK_ANY_MOD,           Button5, ttysend,        {.s = "\005"} },
 };
 
+/* commands */
+static char *copycmd[] = { "/bin/sh", "-c",
+	" dmenu -i -l 10 | xclip -i -selection clipboard",
+	"externalpipe", NULL };
+
+
 /* Internal keyboard shortcuts. */
 #define MODKEY Mod1Mask
 #define TERMMOD (ControlMask|ShiftMask)
@@ -201,11 +207,12 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
 	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
-//	{ ShiftMask,            XK_Page_Up,     kscrollup,      {.i = -1} },
-//	{ ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = -1} },
-	{ MODKEY,            XK_Page_Up,     kscrollup,      {.i = -1} },
-	{ MODKEY,            XK_Page_Down,   kscrolldown,    {.i = -1} },
+	{ ShiftMask,            XK_Page_Up,     kscrollup,      {.i = -1} },
+	{ ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = -1} },
+	{ MODKEY,               XK_Page_Up,     kscrollup,      {.i =  1} },
+	{ MODKEY,               XK_Page_Down,   kscrolldown,    {.i =  1} },
 	{ MODKEY,               XK_u,           copyurl,        {.i =  0} },
+	{ MODKEY,               XK_y,           externalpipe,   {.v =  copycmd} },
 };
 
 /*
